@@ -22,6 +22,29 @@ $(document).ready(function() {
         });
     });
 
+    // show toggle menu ===================================
+    // search-tour
+    $('.search-tour').click(function(){
+        $('.toggleMenu').toggleClass('toggleMenu-show');
+        $('.search-tour').toggleClass('search-tour_active');
+        $('.toggleMenu-close').click(function(){
+            $('.toggleMenu').removeClass('toggleMenu-show');
+        });
+    });
+
+    // Toggle menu tabs ===================================
+    $('#tab-list a').click(function(e) {
+        e.preventDefault();
+        $('a').removeClass('active');
+        $(this).addClass('active');
+        var tab = $(this).attr('href');
+        $('.toggleMenu-box').not(tab).css({
+            'display': 'none'
+        });
+        $(tab).fadeIn(400);
+    });
+    $('#tab-list a:first').click();
+
 
 
 
