@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    // Mobile menu ========================================
+    // Mobile menu =============================================================
     $(function() {
         function burger() {
             $('.main-nav').toggleClass('nav-show');
@@ -22,7 +22,7 @@ $(document).ready(function() {
         });
     });
 
-    // show toggle menu ===================================
+    // show toggle menu ========================================================
     $('.search-tour').click(function() {
         $('.toggleMenu').toggleClass('toggleMenu-show');
         $('.search-tour').toggleClass('search-tour_active');
@@ -42,7 +42,7 @@ $(document).ready(function() {
 
     });
 
-    // Toggle menu tabs ===================================
+    // Toggle menu tabs ========================================================
     $('#tab-list a').click(function(e) {
         e.preventDefault();
         $('a').removeClass('active');
@@ -55,7 +55,7 @@ $(document).ready(function() {
     });
     $('#tab-list a:first').click();
 
-    // slider =============================================
+    // slider ==================================================================
     var mainSliderSelector = ".main-slider",
         interleaveOffset = 0.5;
 
@@ -121,6 +121,31 @@ $(document).ready(function() {
         }
     };
     var mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
+
+    // form button animation ===================================================
+    var button = $('.tour-form_btn');
+
+    button.on('click', function() {
+        var $this = $(this);
+        if ($this.hasClass('active') || $this.hasClass('success')) {
+            return false;
+        }
+        $this.addClass('active');
+        setTimeout(function() {
+            $this.addClass('loader');
+        }, 125);
+        setTimeout(function() {
+            $this.removeClass('loader active');
+            $this.text('Спасибо!');
+            $this.addClass('success animated pulse');
+        }, 1600);
+        setTimeout(function() {
+            $this.text('подберите мне тур');
+            $this.removeClass('success animated pulse');
+            $this.blur();
+        }, 2900);
+    });
+
 
 
 }); //END READY

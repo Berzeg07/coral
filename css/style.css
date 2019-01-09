@@ -777,7 +777,7 @@ html {
     right: 0;
     width: 542px;
     height: 39px;
-    background: url(../img/wave-header.png) no-repeat center;
+    background: url("../img/wave-header.png") no-repeat center;
   }
 }
 
@@ -821,7 +821,9 @@ html {
   transform: translateX(-50px);
 }
 
-.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
   left: 50%;
 }
 
@@ -843,7 +845,9 @@ html {
   background: #0C3E59;
 }
 
-.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
   bottom: 275px;
 }
 
@@ -878,7 +882,7 @@ html {
 .btn-block:after {
   content: "";
   position: absolute;
-  right: 0px;
+  right: 0;
   top: 43px;
   background: url("../img/arrow.png") no-repeat center;
   width: 38px;
@@ -934,5 +938,209 @@ html {
 
 .searchTheTour {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
+}
+
+.tour-wrap {
+  padding: 50px 0;
+  width: 100%;
+  background: url("../img/form-bg.jpg") no-repeat center;
+  background-size: cover;
+}
+
+@media (min-width: 992px) {
+  .tour-wrap {
+    padding: 241px 0 310px;
+  }
+}
+
+.tour-container {
+  max-width: 1096px;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tour-form {
+  text-align: center;
+}
+
+.tour-form_title {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 27px;
+  text-shadow: 0 0 49px rgba(0, 0, 0, 0.33);
+  color: white;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 992px) {
+  .tour-form_title {
+    font-size: 30px;
+    font-size: 71px;
+  }
+}
+
+.tour-form_inner {
+  max-width: 510px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.tour-form_slogan {
+  width: 100%;
+  padding: 18px 10px;
+  background: white;
+  color: #083b57;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+  .tour-form_slogan {
+    font-size: 30px;
+    padding: 18px 40px;
+  }
+}
+
+.tour-form_inp {
+  display: block;
+  padding: 21px 50px;
+  background: #083B57;
+  width: 100%;
+}
+
+.tour-form_inp input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  color: #4486ab;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.tour-captcha_inner {
+  color: #083b57;
+  font-size: 11px;
+  font-weight: 300;
+  padding: 20px 0;
+}
+
+.tour-captcha_inner a {
+  color: #083b57;
+  text-decoration: underline;
+}
+
+@media (min-width: 992px) {
+  .tour-captcha {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+  }
+  .tour-captcha_inner:nth-child(1) {
+    margin-right: 10px;
+  }
+  .tour-captcha_inner:nth-child(2) {
+    max-width: 256px;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.tour-gull,
+.tour-wave {
+  position: absolute;
+}
+
+.tour-wave {
+  right: 0;
+  top: -76px;
+}
+
+.tour-gull {
+  top: 140px;
+  left: -84px;
+}
+
+.tour-form_btn {
+  width: 318px;
+  height: 57px;
+  margin: 25px auto;
+  position: relative;
+  border-radius: 26px;
+  border: 1px solid #083b57;
+  background-color: #ffffff;
+  color: #083b57;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 53px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding-left: 35px;
+  outline: none;
+}
+
+@media (min-width: 992px) {
+  .tour-form_btn {
+    margin-top: 0;
+  }
+}
+
+.tour-form_btn:after {
+  content: "";
+  position: absolute;
+  left: 27px;
+  top: 12px;
+  width: 36px;
+  height: 30px;
+  background: url("../img/case-icon.png") no-repeat center;
+}
+
+.tour-form .tour-form_btn {
+  will-change: transform;
+  transition: all 0.2s ease;
+  border: 1px solid #083b57;
+  text-align: center;
+}
+
+.tour-form .tour-form_btn:hover {
+  background: #008CCE;
+  color: white;
+}
+
+.tour-form .tour-form_btn:active {
+  font-size: 15px;
+  transform: translateY(1px);
+}
+
+.tour-form .tour-form_btn.active {
+  font-size: 0;
+  border-radius: 25px;
+  width: 50px;
+  background: transparent;
+}
+
+.tour-form .tour-form_btn.loader {
+  border-right: 2px solid #ffffff;
+  animation: loader 0.4s linear infinite;
+}
+
+.tour-form .tour-form_btn.success {
+  background: #008CCE;
+  border-color: #008CCE;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
