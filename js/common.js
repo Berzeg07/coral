@@ -146,6 +146,14 @@ $(document).ready(function() {
         }, 2900);
     });
 
+    var swiper = new Swiper('.reviews-slider', {
+        slidesPerView: 4,
+        spaceBetween: 38,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 
 
 }); //END READY
