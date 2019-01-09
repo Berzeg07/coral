@@ -149,6 +149,28 @@ $(document).ready(function() {
     var swiper = new Swiper('.reviews-slider', {
         slidesPerView: 4,
         spaceBetween: 38,
+        breakpoints: {
+            560: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            800: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 38
+            },
+            1100: {
+                slidesPerView: 4,
+                spaceBetween: 38
+            }
+        },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',

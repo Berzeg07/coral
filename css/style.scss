@@ -93,7 +93,6 @@ video {
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-
 article,
 aside,
 details,
@@ -608,10 +607,6 @@ html {
 }
 // slider
 
-[class^="swiper-button-"] {
-    transition: all 0.3s ease;
-}
-
 .swiper-slide {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -739,12 +734,6 @@ html {
     -webkit-transform: translateX(0);
     transform: translateX(0);
     opacity: 1;
-}
-
-[class^="swiper-button-"] {
-    width: 44px;
-    opacity: 0;
-    visibility: hidden;
 }
 
 .swiper-button-prev {
@@ -1088,59 +1077,129 @@ $color2: #008CCE;
 }
 
 .reviews {
-    padding: 58px 0px 160px;
+    padding: 58px 0 160px;
     background: url("../img/reviews-bg.jpg") no-repeat center;
+    background-size: cover;
 
-    .reviews-container {
-        max-width: 1390px;
+    .reviews-title {
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 100px;
+        color: white;
+        max-width: 1472px;
         width: 100%;
+        text-align: left;
         margin: 0 auto;
     }
 
-    .reviews-txt{
+    .reviews-txt {
         color: #083b57;
         font-size: 14px;
         line-height: 24px;
-        padding-bottom: 15px;
-        &_title{
+        padding: 0 38px 15px;
+
+        &_title {
             line-height: 30px;
             font-weight: bold;
-            padding: 15px 0px 30px;
+            padding: 15px 0 30px;
+            text-transform: uppercase;
         }
     }
 
     .reviews-slider {
-        max-width: 1365px;
+        max-width: 1450px;
+        padding: 0 38px;
         position: relative;
         width: 100%;
         margin: 0 auto;
         height: 100%;
         overflow: hidden;
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            position: absolute;
+            width: 12px;
+            height: 22px;
+            background: red;
+            top: 50%;
+            transform: translateY(83%);
+            z-index: 9999;
+        }
+
+        .swiper-button-next {
+            background: url("../img/arrow-right.png") no-repeat center;
+            right: 0;
+        }
+
+        .swiper-button-prev {
+            background: url("../img/arrow-left.png") no-repeat center;
+            left: 0;
+        }
     }
 
     .swiper-slide {
-        padding: 0 38px;
-        max-width: 314px;
-        width: 100%;
+        padding-top: 35px;
         border-radius: 9px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        flex-direction: column;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-        background: white;
+        transition: 0.5s;
+        z-index: 1;
+
+        &_inner {
+            border-radius: 9px;
+            background: white;
+            transition: 0.5s;
+        }
+
+        .reviews-btn {
+            width: 100%;
+            text-align: center;
+            background: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+
+            span {
+                display: block;
+                line-height: 40px;
+                color: white;
+                width: 100%;
+            }
+        }
+
+        &:hover {
+            .reviews-btn {
+                background: #ff6e00;
+            }
+
+            .reviews-img {
+                border: 2px solid red;
+            }
+            padding-top: 25px;
+        }
+
+        .swiper-slide_link {
+            // max-width: 314px;
+            width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
 
         .reviews-img {
             border-radius: 10em;
             overflow: hidden;
+            position: relative;
+            top: -14px;
+            border: 2px solid transparent;
 
             img {
                 display: block;
