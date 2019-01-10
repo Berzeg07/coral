@@ -1077,11 +1077,49 @@ $color2: #008CCE;
 }
 
 .reviews {
+    position: relative;
     padding: 58px 0 160px;
     background: url("../img/reviews-bg.jpg") no-repeat center;
     background-size: cover;
 
+    .rviews-bg {
+        display: none;
+        @media(min-width: 992px) {
+            display: block;
+        }
+    }
+
+    .reviews-plane {
+        position: absolute;
+        right: 0;
+    }
+
+    .reviews-bird {
+        position: absolute;
+        left: 40px;
+        top: 186px;
+    }
+
+    .reviews-wave {
+        position: absolute;
+        top: 0;
+        left: 180px;
+    }
+
+    .reviews-bird_right {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .reviews-bird_left {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
     .reviews-title {
+        position: relative;
         font-size: 36px;
         font-weight: bold;
         line-height: 100px;
@@ -1108,12 +1146,14 @@ $color2: #008CCE;
 
     .reviews-slider {
         max-width: 1450px;
-        padding: 0 38px;
         position: relative;
         width: 100%;
         margin: 0 auto;
         height: 100%;
         overflow: hidden;
+        @media(min-width: 992px) {
+            padding: 0 38px;
+        }
 
         .swiper-button-next,
         .swiper-button-prev {
@@ -1177,7 +1217,6 @@ $color2: #008CCE;
         }
 
         .swiper-slide_link {
-            // max-width: 314px;
             width: 100%;
             display: -webkit-box;
             display: -ms-flexbox;
@@ -1205,5 +1244,152 @@ $color2: #008CCE;
                 display: block;
             }
         }
+    }
+}
+
+.footer {
+    position: relative;
+    background: #083B57;
+    padding: 56px 10px 50px;
+    @media(min-width: 1300px) {
+        padding: 56px 0px 50px;
+    }
+}
+
+.footer-top {
+    @media(min-width: 992px) {
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &_item {
+        text-align: center;
+        margin-bottom: 15px;
+        @media(min-width: 992px) {
+            text-align: left;
+        }
+    }
+
+    &_item:last-child ul {
+        margin-bottom: 15px;
+    }
+    &_item:nth-child(2){
+        max-width: 1074px;
+        width: 100%;
+    }
+}
+
+.footer-logIn{
+    position: relative;
+    &:after{
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -3px;
+        background: url(../img/log-in-footer.png) no-repeat center;
+        width: 21px;
+        height: 21px;
+    }
+}
+
+.footer-nav {
+    border-bottom: 1px solid #255A78;
+    margin-bottom: 27px;
+    ul:last-child{
+        a{
+            padding-right: 30px;
+        }
+    }
+    @media(min-width: 768px) {
+        ul{
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            li{
+                margin-right: 20px;
+            }
+        }
+        ul:last-child{
+            li{
+                margin-right: 0;
+            }
+        }
+    }
+    @media(min-width: 992px) {
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    a {
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 13px;
+        color: #376f8e;
+    }
+}
+
+.footer-contacts {
+    max-width: 680px;
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media(min-width: 992px) {
+        justify-content: space-between;
+    }
+    .footer-contacts_item{
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+    }
+    .footer-contacts_item:nth-child(1){
+        max-width: 280px;
+        width: 100%;
+    }
+    .footer-contacts_item:nth-child(2){
+        max-width: 258px;
+        width: 100%;
+    }
+    &_item {
+        span {
+            font-size: 14px;
+            color: #4c88a4;
+
+            b {
+                font-weight: bold;
+                color: #ffffff;
+            }
+        }
+    }
+
+    &_item:nth-child(2) {
+        span {
+            color: white;
+        }
+    }
+}
+
+.footer-devLink {
+    text-align: center;
+    @media(min-width: 992px) {
+        text-align: right;
+    }
+
+    a {
+        color: #276587;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 16px;
     }
 }
