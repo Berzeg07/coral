@@ -146,6 +146,7 @@ $(document).ready(function() {
         }, 2900);
     });
 
+    // reviews slider ==========================================================
     var swiper = new Swiper('.reviews-slider', {
         slidesPerView: 4,
         spaceBetween: 38,
@@ -176,6 +177,76 @@ $(document).ready(function() {
             prevEl: '.swiper-button-prev',
         },
     });
+
+    // parralax ================================================================
+    var $layer_1 = $('.tour-wave'),
+        $layer_2 = $('.tour-gull'),
+        $layer_3 = $('.reviews-bird'),
+        // $layer_4 = $('.reviews-bird_right'),
+        // $layer_5 = $('.reviews-bird_left'),
+        $container = $('body'),
+        container_w = $container.width(),
+        $cont = $('.tour-container'),
+        $cont2 = $('.reviews'),
+        container_h = $container.height();
+
+    $($cont2).on('mousemove.parallax', function(event) {
+        var pos_x = event.pageX,
+            pos_y = event.pageY,
+            left = 0,
+            top = 0;
+
+        left = container_w / 2 - pos_x;
+        top = container_h / 2 - pos_y;
+
+        TweenMax.to(
+            $layer_3,
+            1, {
+                css: {
+                    transform: 'translateX(' + left / 8 + 'px) translateY(' + top / 6 + 'px)'
+                },
+                ease: Expo.easeOut,
+                overwrite: 'all'
+            });
+    });
+
+    $($cont).on('mousemove.parallax', function(event) {
+        var pos_x = event.pageX,
+            pos_y = event.pageY,
+            left = 0,
+            top = 0;
+
+        left = container_w / 2 - pos_x;
+        top = container_h / 2 - pos_y;
+
+        TweenMax.to(
+            $layer_1,
+            1, {
+                css: {
+                    transform: 'translateX(' + left / 8 + 'px) translateY(' + top / 6 + 'px)'
+                },
+                ease: Expo.easeOut,
+                overwrite: 'all'
+            });
+        TweenMax.to(
+            $layer_2,
+            1, {
+                css: {
+                    transform: 'translateX(' + left / 6 + 'px) translateY(' + top / 4 + 'px)'
+                },
+                ease: Expo.easeOut,
+                overwrite: 'all'
+            });
+    });
+
+    // preloader ===============================================================
+    $(window).on('load', function() {
+        $preloader = $('.preloader'),
+            $loader = $preloader.find('.loader');
+        $loader.fadeOut();
+        $preloader.delay(350).fadeOut('slow');
+    });
+
 
 
 }); //END READY
