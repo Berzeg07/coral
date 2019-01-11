@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="lib/iconate/iconate.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Coral</title>
 </head>
 
 <body>
     <div class="preloader">
-        <div class="loader"><img src="img/preloader.gif"></div>
+        <div class="loader"><img src="img/pr.gif"></div>
     </div>
     <header class="header">
         <div class="header-inner">
@@ -31,7 +33,9 @@
                         <span>+7 (343) <b>555-55-55</b></span>
                     </div>
                     <div class="header-top_item header-top_logIn">
-                        <a href="#">Вход/Регистрация</a>
+                        <a href="#">Вход/Регистрация
+                            <div class="login-icon"><i id="icon" class="fas fa-sign-in-alt"></i></div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -412,7 +416,9 @@
                                     </p>
                                 </div>
                             </div>
-                            <button class="tour-form_btn" type="submit">подберите мне тур</button>
+                            <button class="tour-form_btn" type="submit">
+                                <div class="case-img"><img src="img/case-icon.png"></div>подберите мне тур
+                            </button>
 
                         </form>
                     </div>
@@ -586,7 +592,7 @@
                     <div class="footer-contacts">
                         <div class="footer-contacts_item">
                             <span>+7 (343)<b> 555-55-55</b></span>
-                            <span>lenina1<b>@yandex.ru</b></span>
+                            <a href="mailto:lenina1@yandex">lenina1<b>@yandex.ru</b></a>
                         </div>
                         <div class="footer-contacts_item">
                             <span>Мы в социальных сетях:</span>
@@ -613,6 +619,7 @@
     <script src="lib/jquery/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.7/TweenMax.min.js"></script>
+    <script src="lib/iconate/iconate.min.js"></script>
     <script src="js/common.js"></script>
 
 </body>

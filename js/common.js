@@ -151,27 +151,45 @@ $(document).ready(function() {
         slidesPerView: 4,
         spaceBetween: 38,
         breakpoints: {
-            560: {
-                slidesPerView: 1,
-                spaceBetween: 10
-            },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 30
-            },
-            800: {
-                slidesPerView: 2,
-                spaceBetween: 30
-            },
-            992: {
-                slidesPerView: 3,
-                spaceBetween: 38
-            },
-            1100: {
-                slidesPerView: 4,
-                spaceBetween: 38
-            }
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 38,
         },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        320: {
+          slidesPerView: 0,
+          spaceBetween: 30,
+        }
+    },
+        // breakpoints: {
+        //     560: {
+        //         slidesPerView: 1,
+        //         spaceBetween: 30
+        //     },
+        //     768: {
+        //         slidesPerView: 1,
+        //         spaceBetween: 30
+        //     },
+        //     800: {
+        //         slidesPerView: 2,
+        //         spaceBetween: 30
+        //     },
+        //     992: {
+        //         slidesPerView: 3,
+        //         spaceBetween: 38
+        //     },
+        //     1100: {
+        //         slidesPerView: 4,
+        //         spaceBetween: 38
+        //     }
+        // },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -247,6 +265,27 @@ $(document).ready(function() {
         $preloader.delay(350).fadeOut('slow');
     });
 
+    $('.header-top_logIn').hover(function() {
+        $(this).toggleClass('activeAnimate');
+        var classInspect = $(this).hasClass('activeAnimate');
+        if(classInspect){
+            var iconElement = document.getElementById('icon');
+            var options = {
+                from: 'fa-sign-in-alt',
+                to: 'fa-arrow-left',
+                animation: 'horizontalFlip'
+            };
+            iconate(iconElement, options);
+        }else{
+            var iconElement = document.getElementById('icon');
+            var options2 = {
+                from: 'fa-arrow-left',
+                to: 'fa-sign-in-alt',
+                animation: 'horizontalFlip'
+            };
+            iconate(iconElement, options2);
+        }
+    });
 
 
 }); //END READY
