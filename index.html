@@ -14,7 +14,7 @@
 
 <body>
     <div class="preloader">
-        <div class="loader"><img src="img/pr.gif"></div>
+        <div class="loader"><img src="img/preloader.gif"></div>
     </div>
     <header class="header">
         <div class="header-inner">
@@ -29,12 +29,14 @@
                         </div>
                     </div>
                     <div class="header-top_item header-top_contacts">
-                        <span><b>lenina1</b>@yandex.ru</span>
+                        <a href="mailto:lenina1@yandex.ru"><b>lenina1</b>@yandex.ru</a>
                         <span>+7 (343) <b>555-55-55</b></span>
                     </div>
                     <div class="header-top_item header-top_logIn">
                         <a href="#">Вход/Регистрация
-                            <div class="login-icon"><i id="icon" class="fas fa-sign-in-alt"></i></div>
+                            <div class="login-icon">
+                                <img src="img/log-in.png">
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -394,6 +396,7 @@
         </div>
 
         <div class="tour-wrap">
+            <div class="tour-bg"></div>
             <div class="tour-container">
                 <div class="tour-wave"><img src="img/wave-1.png" alt=""></div>
                 <div class="tour-gull"><img src="img/bird.png" alt=""></div>
@@ -417,7 +420,10 @@
                                 </div>
                             </div>
                             <button class="tour-form_btn" type="submit">
-                                <div class="case-img"><img src="img/case-icon.png"></div>подберите мне тур
+                                <div class="case-img">
+                                    <img src="img/case-icon.png">
+                                </div>
+                                подберите мне тур
                             </button>
 
                         </form>
@@ -596,17 +602,15 @@
                         </div>
                         <div class="footer-contacts_item">
                             <span>Мы в социальных сетях:</span>
-                            <div class="vk-link"><a href="#"><img src="img/vk.png"></a></div>
-                            <div class="inst-link"><a href="#"><img src="img/inst.png"></a></div>
+                            <a href="#" class="soc-icon vk-link"></a>
+                            <a href="#" class="soc-icon inst-link"></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="footer-devLink">
                 <a href="#">
-                    <div class="footer-devLink_img">
-                        <img src="img/ipos.png">
-                    </div>
+                    <div class="footer-devLink_img"></div>
                     <span>Продвижение <br>и разработка сайта</span>
                 </a>
             </div>

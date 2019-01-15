@@ -136,11 +136,11 @@ $(document).ready(function() {
         }, 125);
         setTimeout(function() {
             $this.removeClass('loader active');
-            $this.text('Спасибо!');
+            $this.html('<div class="case-img"><img src="img/case-icon.png"></div>СПАСИБО!');
             $this.addClass('success animated pulse');
         }, 1600);
         setTimeout(function() {
-            $this.text('подберите мне тур');
+            $this.html('<div class="case-img"><img src="img/case-icon.png"></div>подберите мне тур');
             $this.removeClass('success animated pulse');
             $this.blur();
         }, 2900);
@@ -151,45 +151,23 @@ $(document).ready(function() {
         slidesPerView: 4,
         spaceBetween: 38,
         breakpoints: {
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 38,
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 38,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            320: {
+                slidesPerView: 0,
+                spaceBetween: 30,
+            }
         },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        320: {
-          slidesPerView: 0,
-          spaceBetween: 30,
-        }
-    },
-        // breakpoints: {
-        //     560: {
-        //         slidesPerView: 1,
-        //         spaceBetween: 30
-        //     },
-        //     768: {
-        //         slidesPerView: 1,
-        //         spaceBetween: 30
-        //     },
-        //     800: {
-        //         slidesPerView: 2,
-        //         spaceBetween: 30
-        //     },
-        //     992: {
-        //         slidesPerView: 3,
-        //         spaceBetween: 38
-        //     },
-        //     1100: {
-        //         slidesPerView: 4,
-        //         spaceBetween: 38
-        //     }
-        // },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -200,8 +178,8 @@ $(document).ready(function() {
     var $layer_1 = $('.tour-wave'),
         $layer_2 = $('.tour-gull'),
         $layer_3 = $('.reviews-bird'),
-        // $layer_4 = $('.reviews-bird_right'),
-        // $layer_5 = $('.reviews-bird_left'),
+        $layer_4 = $('.reviews-bird_right'),
+        $layer_5 = $('.reviews-bird_left'),
         $container = $('body'),
         container_w = $container.width(),
         $cont = $('.tour-container'),
@@ -221,7 +199,25 @@ $(document).ready(function() {
             $layer_3,
             1, {
                 css: {
+                    transform: 'translateX(' + left / 16 + 'px) translateY(' + top / 14 + 'px)'
+                },
+                ease: Expo.easeOut,
+                overwrite: 'all'
+            });
+        TweenMax.to(
+            $layer_4,
+            1, {
+                css: {
                     transform: 'translateX(' + left / 8 + 'px) translateY(' + top / 6 + 'px)'
+                },
+                ease: Expo.easeOut,
+                overwrite: 'all'
+            });
+        TweenMax.to(
+            $layer_5,
+            1, {
+                css: {
+                    transform: 'translateX(' + left / 10 + 'px) translateY(' + top / 8 + 'px)'
                 },
                 ease: Expo.easeOut,
                 overwrite: 'all'
@@ -266,26 +262,44 @@ $(document).ready(function() {
     });
 
     $('.header-top_logIn').hover(function() {
-        $(this).toggleClass('activeAnimate');
-        var classInspect = $(this).hasClass('activeAnimate');
-        if(classInspect){
-            var iconElement = document.getElementById('icon');
-            var options = {
-                from: 'fa-sign-in-alt',
-                to: 'fa-arrow-left',
-                animation: 'horizontalFlip'
-            };
-            iconate(iconElement, options);
-        }else{
-            var iconElement = document.getElementById('icon');
-            var options2 = {
-                from: 'fa-arrow-left',
-                to: 'fa-sign-in-alt',
-                animation: 'horizontalFlip'
-            };
-            iconate(iconElement, options2);
-        }
+        $('.login-icon').toggleClass('img-rotate');
     });
+
+    $('.tour-form').hover(function() {
+        $('.tour-bg').toggleClass('blur-bg');
+    });
+    // $('.header-top_logIn').hover(function() {
+    //     $(this).toggleClass('activeAnimate');
+    //     var classInspect = $(this).hasClass('activeAnimate');
+    //     if (classInspect) {
+    //         // $('.logIn-img').css('display','none');
+    //         startAnimate();
+    //     } else {
+    //         // $('.logIn-img').css('display','block');
+    //         returnAnimate();
+    //     }
+    // });
+    //
+    // function startAnimate() {
+    //     var iconElement = document.getElementById('icon');
+    //     var options = {
+    //         from: 'fa-sign-in-alt',
+    //         to: 'fa-arrow-left',
+    //         animation: 'horizontalFlip'
+    //     };
+    //
+    //     iconate(iconElement, options);
+    // }
+    //
+    // function returnAnimate() {
+    //     var iconElement = document.getElementById('icon');
+    //     var options2 = {
+    //         from: 'fa-arrow-left',
+    //         to: 'fa-sign-in-alt',
+    //         animation: 'horizontalFlip'
+    //     };
+    //     iconate(iconElement, options2);
+    // }
 
 
 }); //END READY
