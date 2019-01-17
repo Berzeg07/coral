@@ -169,6 +169,7 @@ html {
         transform: translateX(-50%);
         z-index: 10;
         width: 100%;
+        transition: 0.5s;
     }
 }
 
@@ -177,6 +178,10 @@ html {
     padding-top: 13px;
     transition: 0.5s;
     color: white;
+
+    &_logo {
+        transition: 0.5s;
+    }
 
     &:hover {
         background: #0F405B;
@@ -224,7 +229,7 @@ html {
         @media(min-width:1200px) {
             flex-direction: row;
 
-            a{
+            a {
                 padding-right: 40px;
             }
         }
@@ -324,6 +329,87 @@ html {
     }
 }
 
+.mob-info {
+    display: none;
+    span {
+        color: white;
+        font-size: 13px;
+        padding-left: 46px;
+        position: relative;
+        top: -10px;
+    }
+
+    .mob-logo {
+        width: 174px;
+        padding-left: 13px;
+    }
+}
+
+.header-fixed {
+    position: fixed;
+    .header-top {
+        display: none;
+    }
+    .nav-wrap {
+        padding: 6px 0 0;
+    }
+    .mob-login{
+        opacity: 1 !important;
+    }
+    @media(max-width:768px) {
+        .mob-info {
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+            align-items: center;
+        }
+    }
+    @media(min-width:400px) {
+        .mob-info {
+            justify-content: flex-start;
+        }
+    }
+    @media(min-width:768px) {
+        .mob-info {
+            display: none;
+        }
+        .nav-wrap {
+            padding: 20px 0px;
+        }
+        .header-top {
+            display: block;
+            background: #0F405B;
+        }
+    }
+    @media(min-width:992px) {
+        .nav-wrap {
+            padding: 6px 0 0;
+        }
+    }
+    @media(min-width:1100px) {
+        .header-top_logo {
+            transform: scale(0.5);
+        }
+
+        .header-top_item {
+            height: 20px;
+
+            &:first-child {
+                align-items: center;
+            }
+        }
+
+        .header-top_adress {
+            padding-top: 18px;
+        }
+
+        .header-top_inner {
+            align-items: center;
+            padding: 3px 0 15px;
+        }
+    }
+}
+
 .img-rotate {
     transform: rotate(-180deg);
 }
@@ -342,36 +428,33 @@ html {
 }
 
 .navbar {
-    width: 40px;
-    height: 25px;
+    width: 85px;
+    // height: 25px;
     position: absolute;
-    top: 49%;
+    top: 62%;
     transform: translateY(-56%);
-    right: 10px;
+    right: 16px;
     cursor: pointer;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media(min-width:768px) {
+        justify-content: flex-end;
+    }
+    .mob-login{
+        opacity: 0;
+        @media(min-width:768px) {
+            display: none;
+        }
+    }
+
     @media(min-width:992px) {
         display: none;
     }
 
     span {
-        width: 100%;
-        height: 5px;
-        background: white;
-    }
-
-    &:before {
-        content: "";
-        position: absolute;
-        top: 4px;
-        width: 100%;
-        height: 5px;
-        background: white;
-    }
-
-    &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
         width: 100%;
         height: 5px;
         background: white;
@@ -385,7 +468,7 @@ html {
     z-index: 100;
     background: #008cce;
     width: 100%;
-    top: 13px;
+    top: 16px;
     @media(min-width:992px) {
         padding: 0;
         position: unset;
@@ -943,11 +1026,14 @@ $color2: #008CCE;
     background-size: cover;
 }
 
-.tour-form{
-    padding-top: 200px;
+.tour-form {
+    padding-top: 100px;
+    @media(min-width: 992px) {
+        padding-top: 200px;
+    }
 }
 
-.tour-bg{
+.tour-bg {
     position: absolute;
     background: url("../img/form-bg.jpg") no-repeat center;
     background-size: cover;
@@ -956,7 +1042,7 @@ $color2: #008CCE;
     transition: 0.5s;
 }
 
-.blur-bg{
+.blur-bg {
     -webkit-filter: blur(5px);
     -moz-filter: blur(5px);
     filter: blur(5px);
@@ -1008,10 +1094,14 @@ $color2: #008CCE;
 
 .tour-form_inp {
     display: block;
-    padding: 21px 50px;
+    padding: 21px 36px;
     background: white;
     width: 100%;
     border: 2px solid #083B57;
+    @media(min-width:992px) {
+        padding: 21px 10px 21px 45px;
+
+    }
 
     input {
         width: 100%;
@@ -1213,9 +1303,12 @@ $color2: #008CCE;
 
 .reviews {
     position: relative;
-    padding: 58px 0 160px;
+    padding: 0px 0 40px;
     background: url("../img/reviews-bg.jpg") no-repeat center;
     background-size: cover;
+    @media(min-width: 992px) {
+        padding: 58px 0 160px;
+    }
 
     .rviews-bg {
         display: none;
@@ -1657,6 +1750,9 @@ $color2: #008CCE;
     left: 50px;
     cursor: pointer;
     z-index: 500;
+    @media(max-width:992px) {
+        display: none;
+    }
 }
 
 .Phone {
@@ -1867,7 +1963,7 @@ $color2: #008CCE;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 400px;
+        width: 300px;
         margin: 0 auto;
         height: 100%;
     }

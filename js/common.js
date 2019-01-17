@@ -164,7 +164,7 @@ $(document).ready(function() {
                 spaceBetween: 30,
             },
             320: {
-                slidesPerView: 0,
+                slidesPerView: 1,
                 spaceBetween: 30,
             }
         },
@@ -268,38 +268,17 @@ $(document).ready(function() {
     $('.tour-form').hover(function() {
         $('.tour-bg').toggleClass('blur-bg');
     });
-    // $('.header-top_logIn').hover(function() {
-    //     $(this).toggleClass('activeAnimate');
-    //     var classInspect = $(this).hasClass('activeAnimate');
-    //     if (classInspect) {
-    //         // $('.logIn-img').css('display','none');
-    //         startAnimate();
-    //     } else {
-    //         // $('.logIn-img').css('display','block');
-    //         returnAnimate();
-    //     }
-    // });
-    //
-    // function startAnimate() {
-    //     var iconElement = document.getElementById('icon');
-    //     var options = {
-    //         from: 'fa-sign-in-alt',
-    //         to: 'fa-arrow-left',
-    //         animation: 'horizontalFlip'
-    //     };
-    //
-    //     iconate(iconElement, options);
-    // }
-    //
-    // function returnAnimate() {
-    //     var iconElement = document.getElementById('icon');
-    //     var options2 = {
-    //         from: 'fa-arrow-left',
-    //         to: 'fa-sign-in-alt',
-    //         animation: 'horizontalFlip'
-    //     };
-    //     iconate(iconElement, options2);
-    // }
+
+    // fixed menu ==============================================================
+    $(window).on("scroll load resize", function() {
+
+        if ($(this).scrollTop()) {
+            $('.header-inner').addClass('header-fixed');
+        } else {
+            $('.header-inner').removeClass('header-fixed');
+        }
+    });
+
 
 
 }); //END READY
