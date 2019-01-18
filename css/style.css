@@ -359,6 +359,8 @@ html {
 .mob-info .mob-logo {
   width: 174px;
   padding-left: 13px;
+  position: relative;
+  top: 3px;
 }
 
 .header-fixed {
@@ -1093,7 +1095,7 @@ html {
 }
 
 .tour-form {
-  padding-top: 100px;
+  padding-top: 50%;
 }
 
 @media (min-width: 992px) {
@@ -1131,14 +1133,17 @@ html {
 .tour-form_title {
   text-transform: uppercase;
   font-weight: 800;
-  font-size: 27px;
+  font-size: 33px;
   text-shadow: 0 0 49px rgba(0, 0, 0, 0.33);
   color: white;
-  margin-bottom: 50px;
+  margin-bottom: 16px;
+  padding: 0 47px;
 }
 
 @media (min-width: 992px) {
   .tour-form_title {
+    padding: 0;
+    margin-bottom: 50px;
     font-size: 30px;
     font-size: 71px;
   }
@@ -1203,7 +1208,13 @@ html {
   color: #083b57;
   font-size: 11px;
   font-weight: 300;
-  padding: 20px 0;
+  padding: 6px 0;
+}
+
+@media (min-width: 992px) {
+  .tour-captcha_inner {
+    padding: 20px 0;
+  }
 }
 
 .tour-captcha_inner a {
@@ -1250,9 +1261,9 @@ html {
 }
 
 .tour-form_btn {
-  width: 318px;
+  width: 290px;
   height: 57px;
-  margin: 25px auto;
+  margin: 11px auto;
   position: relative;
   border-radius: 26px;
   border: 2px solid #083b57;
@@ -1267,9 +1278,16 @@ html {
   outline: none;
 }
 
+@media (min-width: 768px) {
+  .tour-form_btn {
+    width: 318px;
+  }
+}
+
 @media (min-width: 992px) {
   .tour-form_btn {
     margin-top: 0;
+    margin: 25px auto;
   }
 }
 

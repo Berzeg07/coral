@@ -342,6 +342,8 @@ html {
     .mob-logo {
         width: 174px;
         padding-left: 13px;
+        position: relative;
+        top: 3px;
     }
 }
 
@@ -1027,7 +1029,7 @@ $color2: #008CCE;
 }
 
 .tour-form {
-    padding-top: 100px;
+    padding-top: 50%;
     @media(min-width: 992px) {
         padding-top: 200px;
     }
@@ -1062,11 +1064,14 @@ $color2: #008CCE;
 .tour-form_title {
     text-transform: uppercase;
     font-weight: 800;
-    font-size: 27px;
+    font-size: 33px;
     text-shadow: 0 0 49px rgba(0, 0, 0, 0.33);
     color: white;
-    margin-bottom: 50px;
+    margin-bottom: 16px;
+    padding: 0 47px;
     @media(min-width:992px) {
+        padding: 0;
+        margin-bottom: 50px;
         font-size: 30px;
         font-size: 71px;
     }
@@ -1126,7 +1131,10 @@ $color2: #008CCE;
     color: #083b57;
     font-size: 11px;
     font-weight: 300;
-    padding: 20px 0;
+    padding: 6px 0;
+    @media(min-width:992px) {
+        padding: 20px 0;
+    }
 
     a {
         color: #083b57;
@@ -1176,9 +1184,9 @@ $color2: #008CCE;
 }
 
 .tour-form_btn {
-    width: 318px;
+    width: 290px;
     height: 57px;
-    margin: 25px auto;
+    margin: 11px auto;
     position: relative;
     border-radius: 26px;
     border: 2px solid #083b57;
@@ -1191,8 +1199,12 @@ $color2: #008CCE;
     cursor: pointer;
     padding-left: 35px;
     outline: none;
+    @media(min-width: 768px) {
+        width: 318px;
+    }
     @media(min-width: 992px) {
         margin-top: 0;
+        margin: 25px auto;
     }
 
     &:hover .case-img {
